@@ -1,0 +1,13 @@
+name: earth
+
+services:
+  dashboard:
+    build:
+      context: ./services/dashboard
+      target: builder
+    command: npm run dev -- --host
+    ports:
+      - 8080:5173
+    volumes:
+      - ./services/dashboard:/app
+      - /app/node_modules
