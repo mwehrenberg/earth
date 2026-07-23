@@ -1,4 +1,4 @@
-.counter {
+.service {
   font-size: 16px;
   padding: 5px 10px;
   border-radius: 5px;
@@ -63,6 +63,7 @@
   place-content: center;
   place-items: center;
   flex-grow: 1;
+  padding-top: 48px;
 
   @media (max-width: 1024px) {
     padding: 32px 20px 24px;
@@ -77,16 +78,20 @@
 
   & > div {
     flex: 1 1 0;
-    padding: 32px;
+    padding: 16px 32px;
     @media (max-width: 1024px) {
-      padding: 24px 20px;
+      padding: 14px 20px;
     }
   }
 
   .icon {
-    margin-bottom: 16px;
+    margin-bottom: 8px;
     width: 22px;
     height: 22px;
+  }
+
+  ul {
+    margin-top: 16px;
   }
 
   @media (max-width: 1024px) {

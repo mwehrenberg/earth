@@ -1,0 +1,66 @@
+#journal {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 32px;
+
+  @media (max-width: 1024px) {
+    padding: 32px 20px;
+  }
+
+  h1 {
+    margin: 24px 0 32px;
+  }
+}
+
+.back-button {
+  font: inherit;
+  font-size: 16px;
+  color: var(--text-h);
+  background: var(--social-bg);
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+
+  &:hover {
+    box-shadow: var(--shadow);
+  }
+}
+
+#journal form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+#journal textarea {
+  font: inherit;
+  width: 100%;
+  min-height: 320px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+  resize: vertical;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+
+  &:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+
+  &::placeholder {
+    color: var(--text);
+    opacity: 0.5;
+  }
+}
+
+.journal-entry {
+  p {
+    white-space: pre-wrap;
+    line-height: 1.7;
+  }
+}

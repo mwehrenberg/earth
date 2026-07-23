@@ -1,9 +1,14 @@
 import { useState } from 'react'
 import cuteEarth from './assets/cuteEarth.webp'
+import Journal from './Journal'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [page, setPage] = useState<'home' | 'journal'>('home')
+
+  if (page === 'journal') {
+    return <Journal onBack={() => setPage('home')} />
+  }
 
   return (
     <>
@@ -12,20 +17,32 @@ function App() {
           <img src={cuteEarth} className="base" width="170" height="179" alt="" />
         </div>
         <div>
-          <h1>Welcome to earth</h1>
+          <h1>earth</h1>
           <p>
-            Let's starting building and learning.
+            Let's starting building and learning
           </p>
         </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
+        <b></b>
       </section>
 
+      <div className="ticks"></div>
+
+      <section id="next-steps">
+        <div id="services">
+          <svg className="icon" role="presentation" aria-hidden="true">
+            <use href="/icons.svg#documentation-icon"></use>
+          </svg>
+          <h2>Services</h2>
+          <ul>
+            <li>
+              <button type="button" className="service"
+                onClick={() => setPage('journal')}>
+                Journal du Jour
+              </button>
+            </li>
+          </ul>
+        </div>
+        </section>
       <div className="ticks"></div>
 
       <section id="next-steps">
